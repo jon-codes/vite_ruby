@@ -37,12 +37,12 @@ available configuration options please check Vite's [config reference].
 
 ## Configuring Vite ⚡
 
-When running <kbd>bin/vite</kbd> from the command line, Vite will use your `vite.config.ts`.
+When running <kbd>bin/vite</kbd> from the command line, Vite will use your `vite.config.js`.
 
 If you followed the [installation] section, it should look similar to:
 
 ```js
-// vite.config.ts
+// vite.config.js
 import { defineConfig } from 'vite'
 import RubyPlugin from 'vite-plugin-ruby'
 
@@ -102,7 +102,7 @@ ViteRuby.env['ADMINISTRATOR_ASSETS_PATH'] =
 Then, you can access those environment variables in `process.env` in the [Vite config file]:
 
 ```js
-// vite.config.ts
+// vite.config.js
 const adminAssetsPath = process.env.ADMINISTRATOR_ASSETS_PATH
 ```
 
@@ -114,7 +114,7 @@ are enabled in production to be in [alignment with Rails defaults].
 You may skip source map generation by explicitly configuring <kbd>[sourcemap][source maps]</kbd>:
 
 ```js
-// vite.config.ts
+// vite.config.js
 export default defineConfig({
   build: { sourcemap: false },
 ```
@@ -130,7 +130,7 @@ Keeping assets from previous builds helps to prevent downtime when deploying in 
 You may override this behavior manually:
 
 ```js
-// vite.config.ts
+// vite.config.js
 export default defineConfig({
   build: { emptyOutDir: true },
 ```

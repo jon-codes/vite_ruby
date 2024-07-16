@@ -8,7 +8,7 @@ An example on how to configure a Rails engine to use Vite Ruby.
 - Run `bundle install` and `bundle exec vite install` in the engine directory
 - Check that the following files were added and configure them:
   - `config/vite.json`: Use a different `publicOutputDir` and `development.port` than the parent application to avoid conflicts
-  - `vite.config.ts`: Should be using `vite-plugin-ruby`
+  - `vite.config.js`: Should be using `vite-plugin-ruby`
 
 See `engine.rb` and ` application_helper.rb` in this example to add the rest
 of the setup.

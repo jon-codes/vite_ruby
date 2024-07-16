@@ -64,7 +64,7 @@ Run <kbd>bundle exec vite install</kbd>, which:
 
 - Installs <kbd>[vite]</kbd> and <kbd>[vite-plugin-ruby]</kbd>
 
-- Adds [`vite.config.ts`][vite config] and [`config/vite.json`][json config] configuration files
+- Adds [`vite.config.js`][vite config] and [`config/vite.json`][json config] configuration files
 
 - Creates a sample `application.js` entrypoint in your web app
 

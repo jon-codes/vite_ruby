@@ -121,7 +121,7 @@ Use <kbd>[vite-plugin-windicss]</kbd> to get an [insanely faster](https://twitte
 
 This configuration will detect utility classes in components and server-rendered templates:
 
-  - <kbd>root</kbd> should match the project root which is usually where `vite.config.ts` is located
+  - <kbd>root</kbd> should match the project root which is usually where `vite.config.js` is located
   - Scans `erb` and `haml` files to detect classes in server templates
   - Scans the <kbd>[sourceCodeDir]</kbd> to detect classes in components
 

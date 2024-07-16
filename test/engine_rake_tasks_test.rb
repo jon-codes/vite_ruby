@@ -24,7 +24,7 @@ class EngineRakeTasksTest < ViteRuby::Test
     assert_path_exists vite_binstub_path
 
     within_mounted_app_root { `bin/vite install` }
-    assert_path_exists vite_config_ts_path
+    assert_path_exists vite_config_js_path
     assert_path_exists procfile_dev
     assert_path_exists app_frontend_dir
 
@@ -55,7 +55,7 @@ class EngineRakeTasksTest < ViteRuby::Test
   def test_cli
     within_mounted_app_root { `bundle exec vite install` }
     assert_path_exists vite_binstub_path
-    assert_path_exists vite_config_ts_path
+    assert_path_exists vite_config_js_path
     assert_path_exists procfile_dev
     assert_path_exists app_frontend_dir
 
@@ -149,8 +149,8 @@ private
     root_dir.join('bin/vite')
   end
 
-  def vite_config_ts_path
-    root_dir.join('vite.config.ts')
+  def vite_config_js_path
+    root_dir.join('vite.config.js')
   end
 
   def procfile_dev
@@ -174,7 +174,7 @@ private
   end
 
   def remove_vite_files
-    [vite_binstub_path, vite_config_ts_path, procfile_dev].each do |file|
+    [vite_binstub_path, vite_config_js_path, procfile_dev].each do |file|
       file.delete if file.exist?
     end
     [app_frontend_dir, app_public_dir, app_ssr_dir, tmp_dir].each do |dir|

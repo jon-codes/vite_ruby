@@ -70,7 +70,7 @@ private
 
   # Internal: Creates the Vite and vite-plugin-ruby configuration files.
   def create_configuration_files
-    copy_template 'config/vite.config.ts', to: root.join('vite.config.ts')
+    copy_template 'config/vite.config.js', to: root.join('vite.config.js')
     append root.join('Procfile.dev'), 'vite: bin/vite dev'
     setup_app_files
     ViteRuby.reload_with(config_path: config.config_path)
@@ -79,7 +79,14 @@ private
   # Internal: Installs vite and vite-plugin-ruby at the project level.
   def install_js_dependencies
     package_json = root.join('package.json')
-    write(package_json, '{}') unless package_json.exist?
+    unless package_json.exist?
+      write(package.json, <<~JSON)
+        {
+          "private": true,
+          "type": "module"
+        }
+      JSON
+    end
     deps = js_dependencies.join(' ')
     run_with_capture("#{ npm_install } -D #{ deps }", stdin_data: "\n")
   end

@@ -34,10 +34,10 @@ npm i vite-plugin-rails # yarn add vite-plugin-rails
 
 ## Usage 🚀
 
-Add it to your plugins in `vite.config.ts`
+Add it to your plugins in `vite.config.js`
 
 ```ts
-// vite.config.ts
+// vite.config.js
 import Vue from '@vitejs/plugin-vue' // Example, could be using other plugins.
 import ViteRails from 'vite-plugin-rails'
 
